@@ -35,7 +35,7 @@ If you are training the AST model, then also download the following dependencies
 ## Running the webapp
  
 - Download the required dependencies or replicate & activate our conda environment, as detailed above.
-- Our webapp is in the `webapp` folder: `cd webapp`.
+- Our webapp is in the `app` folder: `cd app`.
 - Download the [pre-trained model weights](https://drive.google.com/file/d/1KFSAYqRBzEkodBr7xirHkeG4bgGxJyz-/view?usp=sharing) and save it in the `webapp` folder with the name `cpu_model.pt`
 - Run webapp: `streamlit run app.py`
 - Note that it may take some time to run first time as models, tokenizers, feature-extractors and config are downloaded.

@@ -9,7 +9,7 @@ We exported our conda environments for training the models and running the app.
 
 *Please note that our `app_env` was ran on a MacOS 11.2 Machine with Intel processor, whereas our training (`train_env`) was done on a linux machine with Nvidia GPUs. The same conda environment may not work on other machines. Instead you may download the packages individually.*
 
-You may also download the following dependencies individually at an alternate means to create the environment:
+You may also download the following dependencies individually as an alternate means to create the environment:
 - Pytorch
 - Huggingface's Transformers
 - Huggingface's Datasets

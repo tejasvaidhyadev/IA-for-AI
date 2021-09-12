@@ -1,6 +1,15 @@
 # IA-for-AI
 
 ## Dependencies:
+
+We exported our conda environments for training the models and running the app.
+
+- `train_env.yml`: Our environment for training. Create using `conda env create --name prompt --file=train_env.yml` & `conda activate prompt`
+- `app_env.yml`: Our environment for app. Create using `conda env create --name prompt_app --file=app_env.yml`	& `conda activate prompt_app`
+
+*Please note that our app_env was ran on a MacOS 11.2 Machine with Intel processor, whereas our training was done on a linux machine with Nvidia GPUs.*
+
+You may also download the following dependencies individually at an alternate means to create the environment:
 - Pytorch >= 1.7
 - Huggingface's Transformers >=4.5
 - Huggingface's Datasets

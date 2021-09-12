@@ -7,11 +7,11 @@ We exported our conda environments for training the models and running the app.
 - `train_env.yml`: Our environment for training. Create using `conda env create --name prompt --file=train_env.yml` & `conda activate prompt`
 - `app_env.yml`: Our environment for app. Create using `conda env create --name prompt_app --file=app_env.yml`	& `conda activate prompt_app`
 
-*Please note that our app_env was ran on a MacOS 11.2 Machine with Intel processor, whereas our training was done on a linux machine with Nvidia GPUs.*
+*Please note that our `app_env` was ran on a MacOS 11.2 Machine with Intel processor, whereas our training (`train_env`) was done on a linux machine with Nvidia GPUs. The same conda environment may not work on other machines. Instead you may download the packages individually.*
 
 You may also download the following dependencies individually at an alternate means to create the environment:
-- Pytorch >= 1.7
-- Huggingface's Transformers >=4.5
+- Pytorch
+- Huggingface's Transformers
 - Huggingface's Datasets
 - torchaudio
 - soundfile
@@ -20,14 +20,31 @@ You may also download the following dependencies individually at an alternate me
 - scipy
 - numpy
 
-Additional dependencies for running the app:
-`streamlit, plotly`
+Additional dependencies for running the webapp: `streamlit, plotly`
+- Create a fresh conda environment
+- `pip install streamlit`
+- `pip install soundfile`
+- `pip install sounddevice`
+- [Install PyTorch-1.8 and torchaudio](https://pytorch.org/get-started/previous-versions/)
+- `pip install transformers==4.10`
+
 
 If you are training the AST model, then also download the following dependencies:
 `matplotlib, numba, timm, zipp, wget, llvmlite`
 
+## Running the webapp
+ 
+- Download the required dependencies or replicate & activate our conda environment, as detailed above.
+- Our webapp is in the `webapp` folder: `cd webapp`.
+- Download the [pre-trained model weights](https://drive.google.com/file/d/1KFSAYqRBzEkodBr7xirHkeG4bgGxJyz-/view?usp=sharing) and save it in the `webapp` folder with the name `cpu_model.pt`
+- Run webapp: `streamlit run app.py`
+- Note that it may take some time to run first time as models, tokenizers, feature-extractors and config are downloaded.
+- The webapp will be hosted locally (port and address printed on command line).
+
+
 ## Training model
 
+- Download the required dependencies or replicate our conda environment, as detailed above.
 - Download the set of audio files in `TrainAudioFiles` & `TestAudioFiles` and place it inside the `dataset` folder.
 - Get pseudo ASR ground truth labels by running `python3 run_asr.py` from inside the `linguistic` folder.
 - If you want to train the linguistic (text-only) model, then you can run `python3 train.py` from inside `linguistic` folder with the following optional command line arguments .

@@ -5,6 +5,7 @@ import sounddevice as sd
 import soundfile as sf
 import os
 import tempfile
+from pydub import AudioSegment
 
 import torch
 import torch.nn as nn
@@ -247,11 +248,13 @@ def main():
     col1, col2 = st.columns([5, 7])
     with col2:
         st.markdown('<div class="mt"></div>', unsafe_allow_html=True)
+        st.markdown('<br><br><br>', unsafe_allow_html=True)
         audio_player = st.empty()
         speech_text = st.empty()
 
     with col1:
         st.markdown(meta.INFO, unsafe_allow_html=True)
+        audio_file = st.file_uploader("Upload an Audio File",type=['wav'])
         duration = st.slider('Choose your recording duration (seconds)', 5, 20, 5)
         recorder_btn = st.button("Recording")
 
@@ -294,6 +297,38 @@ def main():
 
                 info.empty()
                 set_session_state("_is_recording", False)
+
+    if audio_file is not None:
+        # file_details = {"FileName":audio_file.name,"FileType":audio_file.type}
+        # st.write(file_details)
+        with open(audio_file.name,"wb") as f:
+            f.write(audio_file.getbuffer())
+        st.success("Saved File")
+
+        # if audio_file.name.endswith('.wav'):
+        sound = AudioSegment.from_wav(audio_file.name)
+        # else:
+            # sound = AudioSegment.from_mp3(audio_file.name)
+        sound = sound.set_channels(1)
+        sound.export(audio_file.name, format="wav")
+
+        # print(type(audio_file))
+        audio_player.audio(audio_file.name)
+        speech_text.info(f"Converting speech to text ...")
+        result = tts.predict(audio_file.name)
+        speech_text.markdown(
+            f'<p class="ctc-box ltr"><strong>Text: </strong>{result["ctc"]}</p>',
+            unsafe_allow_html=True
+        )
+
+        info.info(f"Recognizing emotion ...")
+        plot_result(result["cf"])
+
+        if os.path.exists(audio_file.name):
+            os.remove(audio_file.name)
+
+            info.empty()
+
 
 
 if __name__ == '__main__':

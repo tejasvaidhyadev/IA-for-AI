@@ -39,6 +39,7 @@ If you are training the AST model, then also download the following dependencies
   - Randomizing seed: `--seed=1`
   - Test the model: `--test_model`
   - Bert Model name or path: `--bert_type=bert-base-uncased`
+- For training AST: Refer to the instructions in `ast/README.md`, the dataset needs to downloaded and kept inside `ast/egs/hack/data/`.
 - If you want to train a model only on audio features, then from inside `phono` folder, run `bash run.sh`. You may edit the `run.sh` to change the following arguments:
   - Pooling method to extract model features: `--pooling_mode` Options: ["mean",'max', 'sum']
   - Name or path of audio only model's pretrained file: `--model_name_or_path`
@@ -52,14 +53,22 @@ If you are training the AST model, then also download the following dependencies
   - Maximum number of models to save: `--save_total_limit`
   - Required Arguments (do not change): `--freeze_feature_extractor`, `--input_column=filename`, `--target_column=emotion`, `output_dir="output_dir"` `delimiter="comma"`, `--evaluation_strategy="steps"`, `--fp16`, `--train_file="./../dataset/train_set.csv"`, `--validation_file="./../dataset/valid_set.csv"`, `--test_file="./../dataset/test_set.csv"`
   - Whether to do train, eval and predict on test: `--do_eval`, `--do_train`, `--do_predict`
-- Merge `merge_text.py` from `phono_feat_extractor` folder. 
-- Extract phonetic features for `train` and `test` set from phono: 
-  -  
-- If you want 
-- Run `python3 bertloader.py` from `phono-linguistic` folder
-- And then
-
-- For training AST: Refer to the instructions in `ast/README.md`, the dataset needs to downloaded and kept inside `ast/egs/hack/data/`.
-
-
+- If you want to train phono_linguistic transformer model:
+    - Extract phonetic features for `train` and `test` set from `phono_feat_extractor`: 
+      - After obtaining ASR predictions from `linguistic`, put the `test.json` and `train.json` in the `phono_feat_extractor` folder.
+      - Merge the above two files using `python3 merge_text.py` inside the `phono_feat_extractor` folder.
+      - Then do `bash run.sh` from inside the same folder. You may change the same arguments as above mentioned for only on audio features. Additional argument of the Bert model: --bert_name='bert-base-uncased'.
+    - After the above step, you will obtain the `train.pkl` and `test.pkl` files inside `phono_feat_extractor`. Put these files in `phono_linguistic/data` folder.
+    - Run `python3 bertloader.py` from `phono-linguistic` folder to cache the dataloader for training.
+    - And then train model using `python3 train.py`.
+    - You may include the following arguments for `python3 bertloader.py` and `python3 train.py`. Make sure the same arguments are passed to the two commands
+      - Seed: `--seed=1` (type=int)
+      - Batch_Size: `--batch_size=16` (type=int)
+      - Learning rate: `--lr=1e-5` (type=float)
+      - Number epochs: `--n_epochs=5` (type=int)
+      - Dummy run (for debugging purposes): `--dummy_run`
+      - Device to train model on: `--device`
+      - Whether to log on wanbd: `--wandb`
+      - Bert model name or path: `--bert_type=bert-base-uncased`
+      - Audio model name or path: `--model_name_or_path='facebook/hubert-large-ll60k'`
 

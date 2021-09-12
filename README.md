@@ -1,5 +1,7 @@
 # IA-for-AI
 
+![Approach](https://github.com/tejasvaidhyadev/IA-for-AI/blob/main/approach.png?raw=true)
+
 ## Dependencies:
 
 We exported our conda environments for training the models and running the app.
@@ -34,6 +36,8 @@ If you are training the AST model, then also download the following dependencies
 `matplotlib, numba, timm, zipp, wget, llvmlite`
 
 ## Running the webapp
+ 
+ ![WebApp](https://github.com/tejasvaidhyadev/IA-for-AI/blob/main/demo.jpeg?raw=true)
  
 - Download the required dependencies or replicate & activate our conda environment, as detailed above.
 - Our webapp is in the `app` folder: `cd app`.

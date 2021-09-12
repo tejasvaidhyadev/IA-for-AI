@@ -1,0 +1,10 @@
+streamlit
+transformers
+torch
+torchaudio
+regex
+pyaudio
+soundfile
+sounddevice
+plotly
+librosa

@@ -1,5 +1,12 @@
 # IA-for-AI
 
+Emotions form an integral part of human interactions. The Intelligence Augmentation for AI Hackathon 2021 paves the way toward more empathy AI systems by aiming to build systems to recognize emotions from audio. The best entry into the competition from our team - Prompt Engineers - is a system that leverages not only the audio features but also the semantics of the spoken words, fusing the two intertwined modalities to achieve a runner-up position on the leaderboard with 61.38% Accuracy. We further improve the latency of the approach by more than 42% via feature reuse, weight sharing and multi-task learning at the cost of only 0.2% Accuracy drop.
+
+
+Our best performing model is a phono-linguistic model, leveraging both the semantics of the spoken works and the speech features. We obtain speech features from Hubert - a speech pretrained transformer model and language features from Bert - a language model running over the output of the transcribed speech. The features from the two modalities are fused together to achieve 61.38% Accuracy. We observe that Bert features over the transcribed speech alone achieves 55.77% Accuracy. Whereas classifying on only the speech features from Hubert yields 58.98% Accuracy. Together the two modalities achieves the best performance.
+
+We improve latency by multi-task learning the HuBert for Audio features as well as speech transcribing (ASR). This leads to 42% less model parameters with only 0.2% performance drop.
+
 ![Approach](https://github.com/tejasvaidhyadev/IA-for-AI/blob/main/approach.png?raw=true)
 
 ## Dependencies:

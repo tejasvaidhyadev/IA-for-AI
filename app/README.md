@@ -1,7 +1,5 @@
 ## Run Locally
-**Dependency**: requirements.txt and packages.txt
-`pip install streamlit`
-`pip install sounddevice`
+**Dependency**: Refer to our main README file.
 
 ```streamlit run app.py```
 

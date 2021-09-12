@@ -25,6 +25,7 @@ Additional dependencies for running the webapp: `streamlit, plotly`
 - `pip install streamlit`
 - `pip install soundfile`
 - `pip install sounddevice`
+- `pip install pydub`
 - [Install PyTorch-1.8 and torchaudio](https://pytorch.org/get-started/previous-versions/)
 - `pip install transformers==4.10`
 

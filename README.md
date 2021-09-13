@@ -101,3 +101,7 @@ If you are training the AST model, then also download the following dependencies
       - Bert model name or path: `--bert_type=bert-base-uncased`
       - Audio model name or path: `--model_name_or_path='facebook/hubert-large-ll60k'`
 
+## Demo Video
+
+[![Alt text](https://raw.githubusercontent.com/tejasvaidhyadev/tejasvaidhyadev.github.io/master/_images/BACKUP/1.png)](https://youtu.be/XVgZponOLbE)
+

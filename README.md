@@ -103,5 +103,11 @@ If you are training the AST model, then also download the following dependencies
 
 ## Demo Video
 
-[![Alt text](https://raw.githubusercontent.com/tejasvaidhyadev/tejasvaidhyadev.github.io/master/_images/BACKUP/1.png)](https://youtu.be/XVgZponOLbE)
+- Instruction to use webapp 
 
+[![Alt text](https://raw.githubusercontent.com/tejasvaidhyadev/tejasvaidhyadev.github.io/master/_images/BACKUP/1.png)](https://youtu.be/XVgZponOLbE)
+ 
+## Miscellanous
+
+- You may contact us by opening an issue on this repo. Please allow 2-3 days of time to address the issue.
+- License: MIT

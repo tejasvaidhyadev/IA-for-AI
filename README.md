@@ -1,5 +1,15 @@
 # IA-for-AI
-
+<div align="center" >
+<a href="https://www.canva.com/design/DAEpwSNVeyE/7-ntpAFtXqQdLJgr9QTVzA/view">
+         <img alt="Qries" src="https://raw.githubusercontent.com/tejasvaidhyadev/tejasvaidhyadev.github.io/master/_images/BACKUP/ppt_wid.png"
+         width=300" height="100">
+      </a>
+<a href="https://youtu.be/XVgZponOLbE">
+         <img alt="Qries" src="https://raw.githubusercontent.com/tejasvaidhyadev/tejasvaidhyadev.github.io/master/_images/BACKUP/video_wid.png"
+          width=280" height="100" >
+      </a>
+</div>
+<br />  
 Emotions form an integral part of human interactions. The Intelligence Augmentation for AI Hackathon 2021 paves the way toward more empathy AI systems by aiming to build systems to recognize emotions from audio. The best entry into the competition from our team - Prompt Engineers - is a system that leverages not only the audio features but also the semantics of the spoken words, fusing the two intertwined modalities to achieve a runner-up position on the leaderboard with 61.38% Accuracy. We further improve the latency of the approach by more than 42% via feature reuse, weight sharing and multi-task learning at the cost of only 0.2% Accuracy drop.
 
 
@@ -110,4 +120,6 @@ If you are training the AST model, then also download the following dependencies
 ## Miscellanous
 
 - You may contact us by opening an issue on this repo. Please allow 2-3 days of time to address the issue.
-- License: MIT
+- License: [MIT](/LICENSE)
+
+<div align="center" > Made with ❤️ </div>

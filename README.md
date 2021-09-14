@@ -1,4 +1,4 @@
-# IA-for-AI
+# IA-for-AI : Intelligence Augmentation for Artificial Intelligence
 
 Emotions form an integral part of human interactions. The Intelligence Augmentation for AI Hackathon 2021 paves the way toward more empathy AI systems by aiming to build systems to recognize emotions from audio. The best entry into the competition from our team - Prompt Engineers - is a system that leverages not only the audio features but also the semantics of the spoken words, fusing the two intertwined modalities to achieve a runner-up position on the leaderboard with 61.38% Accuracy. We further improve the latency of the approach by more than 42% via feature reuse, weight sharing and multi-task learning at the cost of only 0.2% Accuracy drop.
 
